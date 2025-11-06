@@ -1,0 +1,47 @@
+import java.awt.*;
+import java.awt.event.*;
+
+public class MiddleClickToggle {
+    private static boolean extensionsBlocked = false;
+
+    public static void main(String[] args) {
+        try {
+            // Create a frame to capture mouse events
+            Frame frame = new Frame("Middle Click Toggle");
+            frame.setSize(300, 200);
+            frame.setVisible(true);
+
+            // Add a mouse listener to detect middle clicks
+            frame.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    if (e.getButton() == MouseEvent.BUTTON2) { // Middle mouse button
+                        toggleExtensions();
+                    }
+                }
+            });
+
+            // Add a window listener to close the frame properly
+            frame.addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosing(WindowEvent e) {
+                    frame.dispose();
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void toggleExtensions() {
+        extensionsBlocked = !extensionsBlocked;
+        if (extensionsBlocked) {
+            System.out.println("Extensions are now BLOCKED.");
+            // Simulate blocking extensions (replace with actual API calls if available)
+        } else {
+            System.out.println("Extensions are now UNBLOCKED.");
+            // Simulate unblocking extensions (replace with actual API calls if available)
+        }
+    }
+}
+
