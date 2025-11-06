@@ -1,0 +1,25 @@
+
+
+
+
+document.addEventListener('auxclick', function(event) {
+    // Check if the middle mouse button was clicked (event.button === 1)
+    if (event.button === 1) {
+        // Prevent the default browser behavior (e.g., opening link in new tab)
+        event.preventDefault();
+
+        // Implement your "light speed" unblocking logic here
+        // This could involve:
+        // - Modifying CSS styles
+        // - Changing element visibility
+        // - Triggering a specific function
+        // - Fetching data and updating content
+
+        console.log("Middle click detected! Light speed initiated.");
+        // Example: Unhide an element with ID "light-speed-content"
+        const lightSpeedContent = document.getElementById('light-speed-content');
+        if (lightSpeedContent) {
+            lightSpeedContent.style.display = 'block'; // Or 'flex', 'grid', etc.
+        }
+    }
+});
